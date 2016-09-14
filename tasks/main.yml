@@ -1,0 +1,28 @@
+- name: Install Python
+  raw: apt-get install python -y
+
+- name: Install JRE
+  apt:
+    package: openjdk-8-jre-headless
+    state: present
+
+- name: Install RNG
+  apt:
+    package: rng-tools
+    state: present
+
+- name: Install systemd script for the app
+  template:
+    src: app.service.j2
+    dest: /etc/systemd/system/app.service
+  notify: Refresh systemd
+
+- name: Make the app start on boot
+  service:
+    name: app
+    enabled: yes
+
+- name: Upload JAR file
+  copy:
+    src: "{{ spring_boot_app_jar_path }}"
+    dest: /home/ubuntu/app.jar

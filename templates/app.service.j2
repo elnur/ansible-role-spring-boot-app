@@ -1,0 +1,8 @@
+[Service]
+ExecStart=/usr/bin/java -jar -Dspring.profiles.active={{ spring_boot_app_active_profiles }} /home/ubuntu/app.jar
+Restart=on-failure
+User=ubuntu
+Group=ubuntu
+
+[Install]
+WantedBy=multi-user.target
