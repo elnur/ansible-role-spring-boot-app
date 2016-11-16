@@ -1,5 +1,5 @@
 - name: Install Python
-  raw: apt-get install python -y
+  raw: apt install python -y
 
 - name: Install JRE
   apt:
