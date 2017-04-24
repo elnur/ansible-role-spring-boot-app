@@ -26,3 +26,10 @@
   copy:
     src: "{{ spring_boot_app_jar_path }}"
     dest: /home/ubuntu/app.jar
+
+- name: Write properties files
+  blockinfile:
+    path: /home/ubuntu/application.yml
+    block: "{{ spring_boot_app_properties }}"
+    create: yes
+  when: spring_boot_app_properties is defined
