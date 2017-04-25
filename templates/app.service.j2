@@ -1,4 +1,5 @@
 [Service]
+WorkingDirectory=/home/ubuntu
 ExecStart=/usr/bin/java -jar -Dspring.profiles.active={{ spring_boot_app_active_profiles }} /home/ubuntu/app.jar
 Restart=on-failure
 User=ubuntu
