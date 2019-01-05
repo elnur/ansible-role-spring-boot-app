@@ -11,7 +11,7 @@
 - name: Install systemd script for the app
   template:
     src: app.service.j2
-    dest: /etc/systemd/system/app.service
+    dest: /lib/systemd/system/app.service
   notify: Refresh systemd
 
 - name: Make the app start on boot
