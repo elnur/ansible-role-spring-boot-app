@@ -1,6 +1,6 @@
 - name: Install JRE
   apt:
-    package: openjdk-11-jre-headless
+    package: openjdk-{{ spring_boot_app_java_version }}-jre-headless
     state: present
 
 - name: Install RNG

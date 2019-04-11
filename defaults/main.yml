@@ -1,2 +1,3 @@
+spring_boot_app_java_version: 11
 spring_boot_app_active_profiles: default
 spring_boot_app_options:
