@@ -1,6 +1,6 @@
 - name: Install JRE
   apt:
-    package: openjdk-8-jre-headless
+    package: openjdk-11-jre-headless
     state: present
 
 - name: Install RNG
