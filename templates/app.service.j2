@@ -4,6 +4,7 @@ ExecStart=/usr/bin/java {{ spring_boot_app_options }} -jar -Dspring.profiles.act
 Restart=on-failure
 User=ubuntu
 Group=ubuntu
+LimitNOFILE={{ spring_boot_app_open_files_limit }}
 
 [Install]
 WantedBy=multi-user.target
