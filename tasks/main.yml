@@ -1,3 +1,8 @@
+- name: Wait for cloud-init to finish updating apt sources list
+  wait_for:
+    path: /etc/apt/sources.list
+    search_regex: cloud-init
+
 - name: Update apt cache
   apt:
     update_cache: yes
