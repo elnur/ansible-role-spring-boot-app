@@ -8,10 +8,6 @@
     upgrade: safe
     update_cache: yes
 
-- name: Update apt cache
-  apt:
-    update_cache: yes
-
 - name: Install JRE
   apt:
     package: openjdk-{{ spring_boot_app_java_version }}-jre-headless
