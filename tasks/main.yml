@@ -3,6 +3,11 @@
     path: /etc/apt/sources.list
     search_regex: cloud-init
 
+- name: Upgrade packages
+  apt:
+    upgrade: safe
+    update_cache: yes
+
 - name: Update apt cache
   apt:
     update_cache: yes
